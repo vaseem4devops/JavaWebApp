@@ -2,7 +2,7 @@
 <head>
 <style>
 body {
-  background-color: coral;
+  background-color: #fefbd8;
 }
 </style>
 </head>
