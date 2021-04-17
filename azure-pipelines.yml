@@ -46,6 +46,6 @@ stages:
               TomcatUrl: 'http://localhost:8080'
               Username: 'admin'
               Password: 'admin'
-              Warfile: ' /home/azureuser/tomcat/azagent/_demo_project/drop/SaranTest.war'
+              Warfile: '/home/vsts/work/1/drop/target/SaranTest.war'
               Context: '/SaranTest'
               ServerVersion: '7OrAbove'
