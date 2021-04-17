@@ -32,20 +32,3 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-- stage: Deploy
-  jobs:
-  - deployment: DeployJob
-    environment: Deployment
-    strategy:
-      # default deployment strategy
-      runOnce:
-        deploy:
-          steps:
-          - task: TomcatDeployment@1
-            inputs:
-              TomcatUrl: 'http://localhost:8080'
-              Username: 'admin'
-              Password: 'admin'
-              Warfile: '$(System.DefaultWorkingDirectory)/_demo_project-CI/drop/SaranTest.war'
-              Context: '/SaranTest'
-              ServerVersion: '7OrAbove'
