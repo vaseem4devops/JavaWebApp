@@ -10,10 +10,8 @@ stages:
 - stage: Build
   jobs:
   - job: Build
-  
     pool:
       vmImage: ubuntu-latest
-
     steps:
     - task: Maven@3
       inputs:
@@ -36,17 +34,18 @@ stages:
         publishLocation: 'Container'
 - stage: Deploy
   jobs:
-  - job: Deploy
-  
-    pool:
-      vmImage: ubuntu-latest
-
-    steps:
-    - task: TomcatDeployment@1
-      inputs:
-        TomcatUrl: 'http://localhost:8080'
-        Username: 'admin'
-        Password: 'admin'
-        Warfile: '**/*.war'
-        Context: '/SaranTest'
-        ServerVersion: '7OrAbove'
+  - deployment: DeployJob
+    environment: Deployment
+    strategy:
+      # default deployment strategy
+      runOnce:
+        deploy:
+          steps:
+          - task: TomcatDeployment@1
+            inputs:
+              TomcatUrl: 'http://localhost:8080'
+              Username: 'admin'
+              Password: 'admin'
+              Warfile: '**/*.war'
+              Context: '/SaranTest'
+              ServerVersion: '7OrAbove'
