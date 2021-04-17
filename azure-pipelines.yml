@@ -46,6 +46,6 @@ stages:
               TomcatUrl: 'http://localhost:8080'
               Username: 'admin'
               Password: 'admin'
-              Warfile: '**/*.war'
+              Warfile: '$(System.DefaultWorkingDirectory)/_demo_project-CI/drop/SaranTest.war'
               Context: '/SaranTest'
               ServerVersion: '7OrAbove'
