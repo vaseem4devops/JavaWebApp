@@ -43,7 +43,7 @@ stages:
           steps:
           - task: TomcatDeployment@1
             inputs:
-              TomcatUrl: 'http://localhost:8080'
+              TomcatUrl: 'http://13.90.87.146:8080'
               Username: 'admin'
               Password: 'admin'
               Warfile: '/home/vsts/work/1/drop/target/SaranTest.war'
