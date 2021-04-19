@@ -38,17 +38,12 @@ stages:
     environment:
       name: Deployment
       resourceType: VirtualMachine
-      resourceName: saran
     strategy:
       # default deployment strategy
       runOnce:
         deploy:
           steps:
-            - task: CopyFiles@2
-              inputs:
-                SourceFolder: '/home/azureuser/tomcat/azagent/_work/1/drop/target/SaranTest.war'
-                Contents: '**/*.war'
-                TargetFolder: '/home/azureuser/'
+          - script: echo "Hello world"
 #          - task: TomcatDeployment@1
 #            inputs:
 #              TomcatUrl: 'http://13.90.87.146:8080'
