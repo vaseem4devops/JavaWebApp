@@ -43,7 +43,8 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: touch saran.txt
+          
+#          - script: touch saran.txt
 #          - task: TomcatDeployment@1
 #            inputs:
 #              TomcatUrl: 'http://13.90.87.146:8080'
