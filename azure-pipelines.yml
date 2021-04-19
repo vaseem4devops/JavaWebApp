@@ -35,10 +35,9 @@ stages:
 - stage: Deploy
   jobs:
   - deployment: DeployJob
-    environment: Deployment
-#      name: Deployment
-#      resourceType: VirtualMachine
-#      tags: Console
+    environment:
+      name: Deployment
+      resourceType: VirtualMachine
     strategy:
       # default deployment strategy
       runOnce:
