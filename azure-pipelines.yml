@@ -36,11 +36,20 @@ stages:
   jobs:
   - deployment: DeployJob
     environment: Deployment
+#      name: Deployment
+#      resourceType: VirtualMachine
+#      tags: Console
     strategy:
       # default deployment strategy
       runOnce:
         deploy:
           steps:
+          - task: CmdLine@2
+            inputs:
+              script: |
+                ls -lrth
+                
+                echo Hello world
 #          - task: TomcatDeployment@1
 #            inputs:
 #              TomcatUrl: 'http://13.90.87.146:8080'
@@ -49,7 +58,8 @@ stages:
 #              Warfile: '/home/vsts/work/1/drop/target/SaranTest.war'
 #              Context: '/SaranTest'
 #              ServerVersion: '7OrAbove'
-          - task: CmdLine@2
-            inputs:
-              script: 'docker cp /home/vsts/work/1/drop/target/SaranTest.war tomcat:/usr/local/tomcat/webapps/'
+
+#          - task: CmdLine@2
+#            inputs:
+#              script: 'docker cp /home/vsts/work/1/drop/target/SaranTest.war tomcat:/usr/local/tomcat/webapps/'
 
