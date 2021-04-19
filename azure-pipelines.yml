@@ -43,7 +43,12 @@ stages:
       runOnce:
         deploy:
           steps:
-          
+          - task: CmdLine@2
+            inputs:
+              script: |
+                touch /home/azureuser/saran.txt
+                
+                echo Hello world
 #          - script: touch saran.txt
 #          - task: TomcatDeployment@1
 #            inputs:
