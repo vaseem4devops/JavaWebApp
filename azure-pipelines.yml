@@ -38,6 +38,7 @@ stages:
     environment:
       name: Deployment
       resourceType: VirtualMachine
+      resourceName: saran
     strategy:
       # default deployment strategy
       runOnce:
