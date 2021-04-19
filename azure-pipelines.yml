@@ -49,7 +49,7 @@ stages:
               script: |
                 ls -lrth
                 
-                echo Hello world
+                touch success.txt
 #          - task: TomcatDeployment@1
 #            inputs:
 #              TomcatUrl: 'http://13.90.87.146:8080'
