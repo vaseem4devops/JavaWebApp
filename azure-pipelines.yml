@@ -32,6 +32,13 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
+- stage: test
+  jobs:
+  - job: 
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - bash: echo "hello"
 - stage: Deploy
   jobs:
   - deployment: DeployJob
