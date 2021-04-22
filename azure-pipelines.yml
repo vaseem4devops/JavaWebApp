@@ -33,6 +33,7 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 - stage: test
+  dependsOn: none
   jobs:
   - job: 
     pool:
