@@ -35,9 +35,11 @@ steps:
 - bash: |
    cd $(Build.BinariesDirectory) 
    touch hi.txt
+   cd $(system.defaultworkingdirectory)
+   touch dummy.txt
    
    
   displayName: 'Bash Script'
 
-- task: mspremier.PostBuildCleanup.PostBuildCleanup-task.PostBuildCleanup@3
-  displayName: 'Clean Agent Directories'
+#- task: mspremier.PostBuildCleanup.PostBuildCleanup-task.PostBuildCleanup@3
+#  displayName: 'Clean Agent Directories'
