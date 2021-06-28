@@ -37,9 +37,11 @@ steps:
    touch hi.txt
    cd $(system.defaultworkingdirectory)
    touch dummy.txt
+   cd $(build.artifactstagingdirectory)
+   touch artifact.war
    
    
   displayName: 'Bash Script'
 
-#- task: mspremier.PostBuildCleanup.PostBuildCleanup-task.PostBuildCleanup@3
-#  displayName: 'Clean Agent Directories'
+- task: mspremier.PostBuildCleanup.PostBuildCleanup-task.PostBuildCleanup@3
+  displayName: 'Clean Agent Directories'
