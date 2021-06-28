@@ -5,7 +5,9 @@
 
 trigger:
 - master
-
+workspace:
+  clean: all 
+  
 pool:
   name: Kishore_pool
   demands: maven
