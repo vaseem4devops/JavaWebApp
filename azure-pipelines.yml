@@ -33,11 +33,12 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 - stage: test
-  dependsOn: none
+  dependsOn: [] #parllel
   jobs:
   - job: 
     pool:
       vmImage: ubuntu-latest
+    container: 
     steps:
     - bash: echo "hello"
 - stage: Deploy
